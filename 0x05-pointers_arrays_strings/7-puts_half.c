@@ -10,7 +10,8 @@ void puts_half(char *str)
 {
 int tupapiesteban;
 
-for (tupapiesteban = 0; str[tupapiesteban] != '\0'; tupapiesteban++);
+for (tupapiesteban = 0; str[tupapiesteban] != '\0'; tupapiesteban++)
+;
 
 tupapiesteban++;
 for (tupapiesteban /= 2; str[tupapiesteban] != '\0'; tupapiesteban++)
