@@ -1,4 +1,4 @@
-#include "main.h"
+include "main.h"
 
 /**
 * _strlen - return the length of the string
@@ -9,6 +9,7 @@
 int _strlen(char *s)
 {
 int estebantupapi;
+
 for (estebantupapi = 0; s[estebantupapi] != '\0'; estebantupapi++);
 
 return (estebantupapi);
