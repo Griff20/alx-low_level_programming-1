@@ -9,7 +9,8 @@ void print_rev(char *s)
 {
 int tupapiesteban;
 
-for (tupapiesteban = 0; s[tupapiesteban] != '\0'; tupapiesteban++);
+for (tupapiesteban = 0; s[tupapiesteban] != '\0'; tupapiesteban++)
+;
 
 for (tupapiesteban--; tupapiesteban >= 0; tupapiesteban--)
 _putchar(s[tupapiesteban]);
