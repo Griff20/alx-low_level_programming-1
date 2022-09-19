@@ -1,52 +1,37 @@
-iinclude <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
-/* betty style doc for function main goes there */
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
-*/
+ * main - loop through variables a,b,c printing digits
+ *
+ * Return: print to stdout all possible different combinations of three digits
+ */
 int main(void)
 {
-int i, j, k, l;
+int a = 0;
+int b;
 
-i = j = k = 48; l = 49;
-while  ((i < 58))
+while (a <= 98) /*run following while a less than or equal to 98*/
 {
-putchar(i); putchar(j); putchar(32); putchar(k); putchar(l);
-if ((i == 57) && (j == 56) && (k == 57) && (l == 57))
+b = a + 1; /*b is always one more than a*/
+while (b <= 99) /*run following until b equal to 99*/
 {
-putchar('\n'); i++;
+putchar(a / 10 % 10 + '0');
+putchar(a % 10 + '0');
+putchar(' ');
+putchar(b / 10 % 10 + '0');
+putchar(b % 10 + '0');
+if (a == 98 && b == 99)
+{
+putchar('\n');
 }
 else
 {
-putchar(44); putchar(32);
-if ((k == 57) && (l == 57))
-{
-if (j < 56)
-{
-l = ++j + 1; k = i;
+putchar(',');
+putchar(' ');
 }
-else if (j == 56)
-{
-j++; k = i + 1; l = 48;
+b++;
 }
-else if (j == 57)
-{
-j = 48; l = 49; k = ++i;
-}
-}
-else if (l < 57)
-{
-l++;
-}
-else
-{
-l = 48; k++;
-}
-}
+a++; /*increment this loop by 1*/
 }
 return (0);
 }
