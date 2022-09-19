@@ -1,32 +1,27 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
-/* betty style doc for function main goes there */
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
+* main - entry point
+* Return: always 0 (success)
 */
 int main(void)
 {
-int i;
-char l;
+int n; /*not allowed to use char variable*/
 
-i = 48;
-while  (i < 58)
+n = 48; /*48 corresponds with ASCII character 0*/
+
+while (n <= 57) /*57 corresponds with ASCII character 9*/
 {
-putchar(i);
-i++;
+putchar (n); /*output char beginning with 48*/
+if (n != 57) /*if int does not equal 9...*/
+{
+putchar(','); /*...then print a comma */
+putchar(' '); /*and a space until you reach 9*/
 }
 
-l = 'a';
-while (l <= 'f')
-{
-putchar(l);
-l++;
+n++; /*increment operand by 1 until reaching 57 */
 }
-putchar('\n');
+putchar ('\n'); /*add new line*/
 
 return (0);
 }
