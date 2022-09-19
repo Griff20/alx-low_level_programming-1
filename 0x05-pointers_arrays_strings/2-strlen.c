@@ -9,7 +9,6 @@ include "main.h"
 int _strlen(char *s)
 {
 int estebantupapi;
-
 for (estebantupapi = 0; s[estebantupapi] != '\0'; estebantupapi++);
 
 return (estebantupapi);
