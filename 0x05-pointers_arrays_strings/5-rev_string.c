@@ -10,7 +10,8 @@ void rev_string(char *s)
 int tupapiesteban, sad, l;
 char soymaster;
 
-for (tupapiesteban = 0; s[tupapiesteban] != '\0'; tupapiesteban++);
+for (tupapiesteban = 0; s[tupapiesteban] != '\0'; tupapiesteban++)
+;
 
 l = tupapiesteban;
 for (tupapiesteban--, sad = 0; sad < l / 2; tupapiesteban--, sad++)
