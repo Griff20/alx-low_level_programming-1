@@ -11,9 +11,6 @@
 * @b: byte to fill with
 
 * @n: number of spaces to fill
-
-*
-
 * Return: pointer to memory area s
 
 */
