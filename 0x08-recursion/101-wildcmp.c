@@ -1,62 +1,45 @@
-#include "main.h"
+#include "nain.h"
 
 /**
-* is_palindrome -  sss
-* @r: string
-* Return: return something
+* _strlen - return length of string
+* @str: string to check
+* Return: length of str
 */
-
-int is_palindrome(char *r)
+int _strlen(char *str)
 {
-
-int i, size, add;
-
-i = 0;
-add = 0;
-
-size = _strlen_recursion(r);
-
-add = (size % 2 != 0) ? 2 : 1;
-
-return (evaluate(r, i, size - 1, add));
-}
-
-/**
-* evaluate - compare
-* @i: i
-* @size: size
-* @s: string
-* @add: addition depending if n is odd or even
-* Return: return value
-*/
-int evaluate(char *s, int i, int size, int add)
-{
-
-if (i + add == size  && s[i] == s[size])
-{
-return (1);
-}
-
-else if (s[i] == s[size])
-{
-return (evaluate(s, i + 1, size - 1, add));
-}
-
+if (*str == '\0')
 return (0);
-}
-
-/**
-* _strlen_recursion - legth of a string
-* @s: string
-* Return: return legth
-*/
-
-int _strlen_recursion(char *s)
-{
-/*Base condition*/
-if (!*s)
-return (0);
-
 else
-return (1 + _strlen_recursion(s + 1)); /*Sum 1*/
+return (1 + _strlen(str + 1));
+}
+
+/**
+* check_palindrome - checks to see if a string is a palindrome
+* @l: left hand index
+* @r: right hand index
+* @p: possible palindrome
+* Return: 1 if palindrome 0 if not
+*/
+int check_palindrome(int l, int r, char *p)
+{
+if (l >= r)
+return (1);
+else if (p[l] != p[r])
+return (0);
+else
+return (check_palindrome(l + 1, r - 1, p));
+}
+
+/**
+* is_palindrome - states if a string is a palindrome
+* @s: string to check
+*
+* Return: 1 if palindrome, 0 if not
+*/
+int is_palindrome(char *s)
+{
+int i;
+
+i = _strlen(s) - 1;
+return (check_palindrome(0, i, s));
 }
