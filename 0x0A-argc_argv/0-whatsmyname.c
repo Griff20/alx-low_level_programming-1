@@ -1,16 +1,14 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
 
 /**
-* main - returns first parameter passed at command line
-* @argc: number of variables passed at command line
-* @argv: pointer to a list of pointers, that are at heads of strings
-* Return: int (zero) on success
+* main - Prints the program name, followed by a new line.
+* @argc: The number of arguments supplied to the program.
+* @argv: An array of pointers to the arguments.
+* Return: Always o.
 */
-
-int main(int argc, char **argv)
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-argc = 0;
-printf("%s\n", *(argv + argc));
-exit(EXIT_SUCCESS);
+printf("%s\n", argv[0]);
+
+return (0);
 }
