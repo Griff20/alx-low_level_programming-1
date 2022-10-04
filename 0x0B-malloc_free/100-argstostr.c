@@ -1,79 +1,80 @@
-#include "main.h"
+#include <main.h>
 #include <stdlib.h>
-int word_len(char *str);
-int count_words(char *str);
-char **strtow(char *str);
+
 /**
-* word_len - Locates the index marking the end of the
-*first word contained within a string.
-* @str: The string to be searched.
-* Return: The index marking the end of the initial word pointed to by str.
-*/
-int word_len(char *str)
+ * str_concat - Concatenates two strings into newly allocated memory
+ * @s1: String 1
+ * @s2: String 2
+ * Return: Pointer to the new array, or NULL if it fails
+ */
+char *str_concat(char *s1, char *s2)
 {
-int index = 0, len = 0;
-while (*(str + index) && *(str + index) != ' ')
-{
-len++;
-index++;
+	char *cat;
+	unsigned int s1_length = 0;
+	unsigned int s2_length = 0;
+	unsigned int i, total_length = 0;
+
+	if (s1 != NULL)
+	{
+		while (s1[s1_length++])
+			continue;
+	}
+	else
+	{
+		s1_length = 1;
+		s1 = "";
+	}
+	if (s2 != NULL)
+	{
+		while (s2[s2_length++])
+			continue;
+	}
+	else
+	{
+		s2_length = 1;
+		s2 = "";
+	}
+	/* Storage for both null bytes is not required, hence -1 */
+	total_length = s1_length + s2_length - 1;
+	cat = malloc(total_length);
+	if (cat != NULL)
+	{
+		for (i = 0; i < s1_length; i++)
+			cat[i] = s1[i];
+		for (i = 0; i < s2_length; i++)
+			cat[i + s1_length - 1] = s2[i];
+	}
+	return (cat);
 }
-return (len);
-}
+
 /**
-* count_words - Counts the number of words contained within a string.
-* @str: The string to be searched.
-* Return: The number of words contained within str.
-*/
-int count_words(char *str)
+ * argstostr - Concatenates all the arguments of your program
+ * @ac: Argument count
+ * @av: Argument values
+ * Return: Concatenated strings
+ */
+char *argstostr(int ac, char **av)
 {
-int index = 0, words = 0, len = 0;
-for (index = 0; *(str + index); index++)
-len++;
-for (index = 0; index < len; index++)
-{
-if (*(str + index) != ' ')
-{
-words++;
-index += word_len(str + index);
-}
-}
-return (words);
-}
-/**
-* strtow - Splits a string into words.
-* @str: The string to be split.
-* Return: If str = NULL, str = "", or the function fails - NULL.
-* Otherwise - a pointer to an array of strings (words).
-*/
-char **strtow(char *str)
-{
-char **strings;
-int index = 0, words, w, letters, l;
-if (str == NULL || str[0] == '\0')
-return (NULL);
-words = count_words(str);
-if (words == 0)
-return (NULL);
-strings = malloc(sizeof(char *) * (words + 1));
-if (strings == NULL)
-return (NULL);
-for (w = 0; w < words; w++)
-{
-while (str[index] == ' ')
-index++;
-letters = word_len(str + index);
-strings[w] = malloc(sizeof(char) * (letters + 1));
-if (strings[w] == NULL)
-{
-for (; w >= 0; w--)
-free(strings[w]);
-free(strings);
-return (NULL);
-}
-for (l = 0; l < letters; l++)
-strings[w][l] = str[index++];
-strings[w][l] = '\0';
-}
-strings[w] = NULL;
-return (strings);
+	int argument;
+	char *cat = NULL;
+	char *temp = NULL;
+
+	if (ac < 1 || av == NULL)
+		return (NULL);
+
+	for (argument = 0; argument < ac; argument++)
+	{
+		temp = str_concat(temp, av[argument]);
+		if (cat != NULL)
+			free(cat);
+		if (temp == NULL)
+			return (NULL);
+		cat = str_concat(temp, "\n");
+		free(temp);
+		if (cat == NULL)
+			return (NULL);
+		temp = cat;
+	}
+
+	return (cat);
 }
