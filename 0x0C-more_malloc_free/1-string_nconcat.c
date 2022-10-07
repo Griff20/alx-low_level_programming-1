@@ -42,7 +42,7 @@ count = n;
 /*count size total*/
 size = size_1 + count + 1;
 /*malloc*/
-dst = (char *) malloc(size * sizeof(char));
+dst = (char *) malloc(size *sizeof(char));
 if (dst == 0)
 {
 return (NULL);
