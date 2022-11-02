@@ -1,6 +1,9 @@
 #include "main.h"
 
 /**
+* AUTHOR: Alexander kiprop.
+* DATE: 20 SEP 2022.
+* EMAIL: Alexanderkiprop50@gmail.com
 * _puts - print a string to stdout
 * @str: char array string type
 * Description: Can only use _putchar
