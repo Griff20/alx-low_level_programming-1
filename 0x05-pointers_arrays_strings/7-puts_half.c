@@ -1,6 +1,9 @@
 #include "main.h"
 
 /**
+* AUTHOR: Alexander kiprop.
+* DATE: 20 SEP 2022.
+* EMAIL: Alexanderkiprop50@gmail.com
 * puts_half - print second half of a string
 * @str: char array string type
 * Description: If odd number of chars, print (length - 1) / 2
