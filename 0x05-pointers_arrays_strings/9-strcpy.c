@@ -1,6 +1,9 @@
 #include "main.h"
 
 /**
+* AUTHOR: Alexander kiprop.
+* DATE: 20 SEP 2022.
+* EMAIL: Alexanderkiprop50@gmail.com
 *_strcpy - See description
 * @dest: char type string
 * @src: char type string
