@@ -1,6 +1,9 @@
 #include "main.h"
 
 /**
+* AUTHOR: Alexander kiprop.
+* DATE: 20 SEP 2022.
+* EMAIL: Alexanderkiprop50@gmail.com
 * print_rev - print a string in reverse
 * @s: char array string type
 */
