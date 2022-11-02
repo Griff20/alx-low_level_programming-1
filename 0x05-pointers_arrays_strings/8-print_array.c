@@ -2,6 +2,9 @@
 #include <stdio.h>
 
 /**
+* AUTHOR: Alexander kiprop.
+* DATE: 20 SEP 2022.
+* EMAIL: Alexanderkiprop50@gmail.com
 * print_array - print `n` elements of an array of integers
 * @a: int type array pointer
 * @n: int type integer
