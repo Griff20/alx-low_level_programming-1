@@ -1,3 +1,8 @@
+/**
+* AUTHOR: Alexander kiprop.
+* DATE: 20 SEP 2022.
+* EMAIL: Alexanderkiprop50@gmail.com
+**/
 int _putchar(char c);
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
