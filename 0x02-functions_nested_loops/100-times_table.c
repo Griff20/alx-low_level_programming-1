@@ -1,41 +1,44 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-
-* print_to_98 – Prints all natural numbers from input to 98,
-
-* in order separated by a comma followed by a space.
-
-* @n: The number to begin counting at.
-
+* print_times_table - Prints the n times table
+* @n: number times table (0 < n <= 15)
+* Return: no return
 */
-
-Void print_to_98(int n)
-
+void print_times_table(int n)
 {
+int a, b, op;
 
-If (n >= 98)
-
+if (n >= 0 && n <= 15)
 {
-
-While (n > 98)
-
-Printf(“%d, “, n--);
-
-Printf(“%d\n”, n);
-
+for (a = 0; a <= n; a++)
+{
+_putchar(48);
+for (b = 1; b <= n; b++)
+{
+op = a * b;
+_putchar(44);
+_putchar(32);
+if (op <= 9)
+{
+_putchar(32);
+_putchar(32);
+_putchar(op + 48);
 }
-
-Else
-
+else if (op <= 99)
 {
-
-While (n < 98)
-
-Printf(“%d, “, n++);
-
-Printf(“%d\n”, n);
-
+_putchar(32);
+_putchar((op / 10) + 48);
+_putchar((op % 10) + 48);
 }
-
+else
+{
+_putchar(((op / 100) % 10) + 48);
+_putchar(((op / 10) % 10) + 48);
+_putchar((op % 10) + 48);
+}
+}
+_putchar('\n');
+}
+}
 }
